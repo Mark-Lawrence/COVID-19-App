@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,100 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Covid_19_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1D-lR-QeN" customClass="GraphView" customModule="Covid_19_App" customModuleProvider="target">
+                                <rect key="frame" x="20" y="323" width="335" height="244"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="YNc-ZS-0Mf"/>
+                                    <constraint firstAttribute="height" constant="244" id="qeI-mn-OmJ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7w-kK-BYH">
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BLL-fy-uA9"/>
+                                    <constraint firstAttribute="height" constant="60" id="JUd-lF-yHI"/>
+                                </constraints>
+                                <state key="normal" image="Mic"/>
+                                <connections>
+                                    <action selector="tapTalkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7go-sD-bIb"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="standby" translatesAutoresizingMaskIntoConstraints="NO" id="Ole-iW-gYk">
+                                <rect key="frame" x="8" y="70" width="151" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="Fug-5J-9qR"/>
+                                    <constraint firstAttribute="height" constant="233" id="Fx4-tL-Au3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="How can I help you?" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rgd-7J-pic">
+                                <rect key="frame" x="163" y="16" width="204" height="291"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="39"/>
+                                <color key="textColor" name="green"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normal circle" translatesAutoresizingMaskIntoConstraints="NO" id="paN-qM-flJ">
+                                <rect key="frame" x="145" y="574.5" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="NB4-aR-WeA"/>
+                                    <constraint firstAttribute="width" constant="85" id="tJx-49-M4T"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darker mic" translatesAutoresizingMaskIntoConstraints="NO" id="dNX-Rk-445">
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="59J-td-d5W"/>
+                                    <constraint firstAttribute="width" constant="60" id="cnX-XC-HJe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dNX-Rk-445" firstAttribute="centerX" secondItem="paN-qM-flJ" secondAttribute="centerX" id="0kN-iZ-wsb"/>
+                            <constraint firstItem="U7w-kK-BYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="77D-b5-Mq9"/>
+                            <constraint firstItem="Ole-iW-gYk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ECu-fA-Khp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J1D-lR-QeN" secondAttribute="bottom" constant="100" id="GFu-e9-0to"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U7w-kK-BYH" secondAttribute="bottom" constant="20" id="Nlq-YE-QDj"/>
+                            <constraint firstItem="Rgd-7J-pic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="TnJ-Sd-cdc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rgd-7J-pic" secondAttribute="trailing" constant="8" id="Voh-MI-4FC"/>
+                            <constraint firstItem="paN-qM-flJ" firstAttribute="centerY" secondItem="U7w-kK-BYH" secondAttribute="centerY" id="YW7-EI-i0H"/>
+                            <constraint firstItem="Rgd-7J-pic" firstAttribute="leading" secondItem="Ole-iW-gYk" secondAttribute="trailing" constant="4" id="Yum-eV-VAz"/>
+                            <constraint firstItem="J1D-lR-QeN" firstAttribute="top" secondItem="Rgd-7J-pic" secondAttribute="bottom" constant="16" id="cgE-i2-8xH"/>
+                            <constraint firstItem="J1D-lR-QeN" firstAttribute="top" secondItem="Ole-iW-gYk" secondAttribute="bottom" constant="20" id="he6-cB-8cT"/>
+                            <constraint firstItem="dNX-Rk-445" firstAttribute="centerY" secondItem="paN-qM-flJ" secondAttribute="centerY" id="iV6-O9-R34"/>
+                            <constraint firstItem="paN-qM-flJ" firstAttribute="centerX" secondItem="U7w-kK-BYH" secondAttribute="centerX" id="iud-nx-1K5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J1D-lR-QeN" secondAttribute="trailing" constant="20" id="lME-75-pXb"/>
+                            <constraint firstItem="J1D-lR-QeN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qFh-W8-0fQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="darkerMic" destination="dNX-Rk-445" id="CF2-sf-Xxw"/>
+                        <outlet property="graphView" destination="J1D-lR-QeN" id="iZT-kZ-8ZU"/>
+                        <outlet property="headerResponseLabel" destination="Rgd-7J-pic" id="e6H-9L-wyf"/>
+                        <outlet property="manImage" destination="Ole-iW-gYk" id="aFL-xr-PUJ"/>
+                        <outlet property="recordButton" destination="U7w-kK-BYH" id="5XJ-gX-hxS"/>
+                        <outlet property="recordRing" destination="paN-qM-flJ" id="HhA-qu-L08"/>
+                        <outlet property="talkButton" destination="U7w-kK-BYH" id="aVn-8W-qRL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="113.79310344827587"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Mic" width="200" height="200"/>
+        <image name="darker mic" width="200" height="200"/>
+        <image name="normal circle" width="200" height="200"/>
+        <image name="standby" width="279" height="422"/>
+        <namedColor name="green">
+            <color red="0.38039215686274508" green="0.84705882352941175" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
